@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Grid Types</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-top: 40px;
+      color: #2c3e50;
+    }
+
+    .grid {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .grid div {
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    /* Grid 1: Fixed columns */
+    .grid-fixed {
+      grid-template-columns: 100px 100px 100px;
+    }
+
+    /* Grid 2: Fractional columns */
+    .grid-fr {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    /* Grid 3: Responsive auto-fit */
+    .grid-auto-fit {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    /* Grid 4: Explicit rows */
+    .grid-rows {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100px 50px 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Different Types of CSS Grid Layouts</h1>
+
+  <h2>1. Fixed Column Widths (100px each)</h2>
+  <div class="grid grid-fixed">
+    <div>1</div><div>2</div><div>3</div>
+  </div>
+
+  <h2>2. Fractional Columns (1fr 2fr 1fr)</h2>
+  <div class="grid grid-fr">
+    <div>1</div><div>2</div><div>3</div>
+  </div>
+
+  <h2>3. Responsive Auto-Fit Columns</h2>
+  <div class="grid grid-auto-fit">
+    <div>A</div><div>B</div><div>C</div><div>D</div><div>E</div>
+  </div>
+
+  <h2>4. Grid with Explicit Rows</h2>
+  <div class="grid grid-rows">
+    <div>Row 1</div><div>Row 1</div>
+    <div>Row 2</div><div>Row 2</div>
+    <div>Row 3</div><div>Row 3</div>
+  </div>
+
+</body>
+</html>

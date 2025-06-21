@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Table Layout Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .fixed-table {
+      table-layout: fixed;
+    }
+
+    .auto-table {
+      table-layout: auto; /* behaves like none (default) */
+    }
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="title">Table with <code>table-layout: fixed</code></div>
+  <table class="fixed-table">
+    <thead>
+      <tr>
+        <th style="width: 100px;">ID</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Alice</td>
+        <td>This is a short description.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Bob</td>
+        <td>This is a much longer description that won't stretch the column because layout is fixed.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="title">Table with <code>table-layout: auto</code> (default)</div>
+  <table class="auto-table">
+    <thead>
+      <tr>
+        <th style="width: 100px;">ID</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Alice</td>
+        <td>This is a short description.</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Bob</td>
+        <td>This is a much longer description that will stretch the column to fit the content.</td>
+      </tr>
+    </tbody>
+  </table>
+
+</body>
+</html>

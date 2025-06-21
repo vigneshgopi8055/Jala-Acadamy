@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Show Current Date and Time</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      text-align: center;
+    }
+    #datetime {
+      margin-top: 20px;
+      font-size: 1.4rem;
+      color: #2c3e50;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Click the Button to Show Date and Time</h1>
+  <button id="showBtn">Show Date & Time</button>
+
+  <div id="datetime"></div>
+
+  <script>
+    document.getElementById("showBtn").addEventListener("click", function () {
+      const now = new Date();
+      document.getElementById("datetime").textContent = now.toLocaleString();
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Input Types Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    label {
+      font-weight: bold;
+    }
+    .input-group {
+      display: flex;
+      flex-direction: column;
+    }
+    .radio-group, .checkbox-group {
+      display: flex;
+      gap: 15px;
+      margin-top: 5px;
+    }
+    button, input[type="submit"], input[type="reset"] {
+      width: 120px;
+      padding: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: none;
+      background-color: #007BFF;
+      color: white;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    button:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Input Attributes Demo</h2>
+
+  <form>
+    <!-- Text input -->
+    <div class="input-group">
+      <label for="username">Username (text):</label>
+      <input type="text" id="username" name="username" placeholder="Enter username" />
+    </div>
+
+    <!-- Password input -->
+    <div class="input-group">
+      <label for="password">Password (password):</label>
+      <input type="password" id="password" name="password" placeholder="Enter password" />
+    </div>
+
+    <!-- Radio buttons -->
+    <div class="input-group">
+      <label>Gender (radio):</label>
+      <div class="radio-group">
+        <label><input type="radio" name="gender" value="male" /> Male</label>
+        <label><input type="radio" name="gender" value="female" /> Female</label>
+        <label><input type="radio" name="gender" value="other" /> Other</label>
+      </div>
+    </div>
+
+    <!-- Checkboxes -->
+    <div class="input-group">
+      <label>Hobbies (checkbox):</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="hobbies" value="reading" /> Reading</label>
+        <label><input type="checkbox" name="hobbies" value="traveling" /> Traveling</label>
+        <label><input type="checkbox" name="hobbies" value="music" /> Music</label>
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <input type="submit" value="Submit" />
+    <input type="reset" value="Reset" />
+    <button type="button" onclick="alert('Button clicked!')">Button</button>
+  </form>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Image Box Shadow and Hover Effect</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    text-align: center;
+  }
+  .image-box {
+    display: inline-block;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .image-box:hover {
+    box-shadow: 0 12px 24px rgba(0,0,0,0.6);
+    cursor: pointer;
+  }
+  img {
+    display: block;
+    width: 300px;
+    height: auto;
+  }
+</style>
+</head>
+<body>
+
+<h2>Image Box Shadow & Hover Effect</h2>
+
+<div class="image-box">
+  <img src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=600&q=80" alt="Beautiful Landscape" />
+</div>
+
+</body>
+</html>

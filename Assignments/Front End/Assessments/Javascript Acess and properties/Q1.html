@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Button Disappear on Click</title>
+<style>
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<button onclick="hideButton(this)">Click me to disappear</button>
+
+<script>
+  function hideButton(btn) {
+    // 'btn' refers to the clicked button, equivalent to 'this' in the onclick handler
+    btn.style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

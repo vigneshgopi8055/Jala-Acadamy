@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Different Borders Example</title>
+  <style>
+    /* Page background and text styling */
+    body {
+      background-color: #f9f9f9;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Box with different borders */
+    .border-box {
+      padding: 30px;
+      background-color: #fff;
+      width: 300px;
+      text-align: center;
+
+      /* Top border: solid */
+      border-top: 5px solid red;
+
+      /* Right border: dashed */
+      border-right: 6px dashed green;
+
+      /* Bottom border: dotted */
+      border-bottom: 8px dotted blue;
+
+      /* Left border: double */
+      border-left: 10px double purple;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="border-box">
+    <h2>Different Borders</h2>
+    <p>Each side of this box has a different border style, color, and width.</p>
+  </div>
+
+</body>
+</html>

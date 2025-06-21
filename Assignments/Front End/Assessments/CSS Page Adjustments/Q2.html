@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Visibility and Display Demo</title>
+<style>
+  /* VISIBILITY */
+  #visible {
+    visibility: visible;
+    background-color: lightgreen;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  #hidden {
+    visibility: hidden;
+    background-color: lightcoral;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  #collapse {
+    visibility: collapse;
+    background-color: lightblue;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* DISPLAY */
+  #display-none {
+    display: none;
+    background-color: yellow;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  #display-inline {
+    display: inline;
+    background-color: orange;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  #display-block {
+    display: block;
+    background-color: lightpink;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  #display-contents {
+    display: contents;
+    background-color: lightgray;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px dashed black;
+  }
+
+  #display-listitem {
+    display: list-item;
+    background-color: lightyellow;
+    padding: 10px;
+    margin-bottom: 10px;
+    list-style-type: disc;
+  }
+</style>
+</head>
+<body>
+
+<h2>Visibility Property</h2>
+
+<div id="visible">Visibility: visible (default, element is shown)</div>
+<div id="hidden">Visibility: hidden (element hidden but still takes up space)</div>
+<div id="collapse">Visibility: collapse (for table rows/columns, here behaves like hidden)</div>
+
+<hr />
+
+<h2>Display Property</h2>
+
+<div id="display-none">Display: none (element does NOT take up any space)</div>
+
+<p>
+  Normal paragraph with some text
+  <span id="display-inline">Display: inline (like text, no line break)</span>
+  more text after inline element.
+</p>
+
+<div id="display-block">Display: block (takes full width, starts on new line)</div>
+
+<div id="display-contents">
+  Display: contents (container disappears, children behave as if direct children of parent)
+  <p>Child paragraph inside display: contents</p>
+  <span>Child span inside display: contents</span>
+</div>
+
+<ul>
+  <li>Normal list item 1</li>
+  <li id="display-listitem">Display: list-item (behaves like list item with bullet)</li>
+  <li>Normal list item 3</li>
+</ul>
+
+</body>
+</html>

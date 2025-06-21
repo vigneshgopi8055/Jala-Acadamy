@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Multiple Background Images</title>
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    
+    /* Multiple background images */
+    background-image: 
+      url('https://via.placeholder.com/150/ff7f7f/333333?text=Image+1'),
+      url('https://via.placeholder.com/100/7fafff/333333?text=Image+2'),
+      url('https://via.placeholder.com/200/7fff7f/333333?text=Image+3');
+
+    /* Positions of each background image */
+    background-position: 
+      top left,      /* Image 1 */
+      center center, /* Image 2 */
+      bottom right;  /* Image 3 */
+
+    /* Sizes of each background image */
+    background-size: 
+      150px 150px, /* Image 1 size */
+      100px 100px, /* Image 2 size */
+      200px 200px; /* Image 3 size */
+
+    background-repeat: no-repeat;
+  }
+</style>
+</head>
+<body>
+
+  <h1 style="text-align:center; margin-top: 40vh; color: #444;">Multiple Background Images Example</h1>
+
+</body>
+</html>

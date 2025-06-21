@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cookie Functions Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 200px;
+    }
+    button {
+      padding: 8px 16px;
+      margin-left: 10px;
+    }
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Cookie Management in JavaScript</h2>
+
+  <input type="text" id="username" placeholder="Enter your name" />
+  <button onclick="setCookie()">Set Cookie</button>
+  <button onclick="checkCookie()">Check Cookie</button>
+
+  <div id="output"></div>
+
+  <script>
+    // Set a cookie
+    function setCookie() {
+      const name = "username";
+      const value = document.getElementById("username").value.trim();
+      if (value !== "") {
+        const days = 7; // expires in 7 days
+        const d = new Date();
+        d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+        let expires = "expires=" + d.toUTCString();
+        document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        document.getElementById("output").textContent = "Cookie set for: " + value;
+      } else {
+        document.getElementById("output").textContent = "Please enter a name.";
+      }
+    }
+
+    // Get a cookie by name
+    function getCookie(name) {
+      const cname = name + "=";
+      const decodedCookie = decodeURIComponent(document.cookie);
+      const ca = decodedCookie.split(';');
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i].trim();
+        if (c.indexOf(cname) === 0) {
+          return c.substring(cname.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    // Check if cookie exists
+    function checkCookie() {
+      const user = getCookie("username");
+      if (user !== "") {
+        document.getElementById("output").textContent = "Welcome back, " + user + "!";
+      } else {
+        document.getElementById("output").textContent = "No cookie found. Please set one.";
+      }
+    }
+  </script>
+
+</body>
+</html>

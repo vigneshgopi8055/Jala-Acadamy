@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>call() vs apply() Demo</title>
+</head>
+<body>
+
+<h2>call() and apply() example</h2>
+
+<button onclick="useCall()">Use call()</button>
+<button onclick="useApply()">Use apply()</button>
+
+<script>
+  const person = {
+    fullName: function(city, country) {
+      return this.firstName + " " + this.lastName + ", " + city + ", " + country;
+    }
+  };
+
+  const person1 = {
+    firstName: "John",
+    lastName: "Doe"
+  };
+
+  function useCall() {
+    // call() takes arguments one by one after the thisArg
+    const result = person.fullName.call(person1, "New York", "USA");
+    alert("Using call(): " + result);
+  }
+
+  function useApply() {
+    // apply() takes arguments as an array after the thisArg
+    const result = person.fullName.apply(person1, ["Los Angeles", "USA"]);
+    alert("Using apply(): " + result);
+  }
+</script>
+
+</body>
+</html>

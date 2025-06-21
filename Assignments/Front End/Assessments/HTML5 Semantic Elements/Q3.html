@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HTML5 Semantic Elements Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+    color: #333;
+  }
+  header, nav, footer, article, section, aside {
+    padding: 20px;
+  }
+  header {
+    background-color: #4CAF50;
+    color: white;
+  }
+  nav {
+    background-color: #333;
+  }
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  hgroup h1 {
+    margin: 0;
+  }
+  hgroup h2 {
+    margin: 5px 0 0;
+    font-weight: normal;
+    color: #ddd;
+  }
+  article {
+    background-color: #f4f4f4;
+    margin: 20px 0;
+    border-radius: 5px;
+  }
+  figure {
+    margin: 0;
+    text-align: center;
+  }
+  figcaption {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+  }
+  mark {
+    background-color: yellow;
+    padding: 0 3px;
+  }
+  aside {
+    background-color: #e2e2e2;
+    margin: 20px 0;
+    padding: 15px;
+    border-left: 5px solid #4CAF50;
+  }
+  footer {
+    background-color: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+  }
+  section {
+    padding: 20px 0;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <hgroup>
+    <h1>My Awesome Website</h1>
+    <h2>Your gateway to great content</h2>
+  </hgroup>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#articles">Articles</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<section id="home">
+  <article>
+    <h2>Welcome to Our Site</h2>
+    <p>This website is designed to showcase the use of <mark>HTML5 semantic elements</mark> in real-world examples.</p>
+    <figure>
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Beautiful Beach" width="600" />
+      <figcaption>Relaxing beach view to calm your mind.</figcaption>
+    </figure>
+    <time datetime="2025-06-21">Published: June 21, 2025</time>
+  </article>
+</section>
+
+<section id="articles">
+  <article>
+    <h2>Latest Article</h2>
+    <p>HTML5 has introduced many useful tags such as <mark>article</mark>, <mark>aside</mark>, <mark>figure</mark>, and <mark>nav</mark> that help create well-structured, accessible web pages.</p>
+  </article>
+
+  <aside>
+    <h3>Did You Know?</h3>
+    <p>The <code>&lt;mark&gt;</code> tag is used to highlight text like this!</p>
+  </aside>
+</section>
+
+<section id="about">
+  <article>
+    <h2>About Us</h2>
+    <p>We are passionate about web development and love to explore new standards like HTML5.</p>
+  </article>
+</section>
+
+<footer>
+  <p>&copy; 2025 My Awesome Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

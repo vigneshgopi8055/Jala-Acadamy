@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Target Attribute Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  a {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #0066cc;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
+</head>
+<body>
+
+<h1>Links with Target Attribute</h1>
+
+<!-- Opens link in the same tab (default behavior) -->
+<a href="https://www.example.com" target="_self">Open in same tab (_self)</a>
+
+<!-- Opens link in a new tab or window -->
+<a href="https://www.example.com" target="_blank">Open in new tab (_blank)</a>
+
+<!-- Opens link in the parent frame -->
+<a href="https://www.example.com" target="_parent">Open in parent (_parent)</a>
+
+<!-- Opens link in the full body of the window -->
+<a href="https://www.example.com" target="_top">Open in top (_top)</a>
+
+<!-- Opens link in a named iframe or window -->
+<iframe name="myFrame" style="width: 100%; height: 200px; border: 1px solid #ccc; margin-bottom: 10px;"></iframe>
+<a href="https://www.example.com" target="myFrame">Open in iframe named "myFrame"</a>
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CSS Position Properties Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    height: 2000px; /* to enable scrolling for sticky/fixed */
+  }
+
+  /* Common box style */
+  .box {
+    width: 200px;
+    padding: 15px;
+    margin: 15px 0;
+    color: white;
+    font-weight: bold;
+  }
+
+  /* Static (default) */
+  .static {
+    position: static;
+    background-color: #4CAF50;
+  }
+
+  /* Relative: shifts from original position */
+  .relative {
+    position: relative;
+    top: 10px;
+    left: 20px;
+    background-color: #2196F3;
+  }
+
+  /* Absolute: positioned relative to nearest positioned ancestor or viewport */
+  .absolute-container {
+    position: relative; /* container for absolute positioning */
+    height: 150px;
+    background-color: #f0f0f0;
+    margin-bottom: 40px;
+    border: 1px dashed #999;
+  }
+  .absolute {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #FF5722;
+  }
+
+  /* Fixed: stays fixed in viewport */
+  .fixed {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    background-color: #9C27B0;
+  }
+
+  /* Sticky: sticks when you scroll past it */
+  .sticky {
+    position: sticky;
+    top: 0;
+    background-color: #FFC107;
+    padding: 10px;
+    font-weight: bold;
+    border: 2px solid #FFA000;
+  }
+</style>
+</head>
+<body>
+
+<h1>CSS Position Properties</h1>
+
+<p class="sticky">I am sticky! I will stick to the top when you scroll down.</p>
+
+<div class="box static">Static position (default)</div>
+
+<div class="box relative">Relative position (shifted 10px down, 20px right)</div>
+
+<div class="absolute-container">
+  <div class="box absolute">Absolute position (20px from top-right of container)</div>
+</div>
+
+<div class="box fixed">Fixed position (always at bottom-left of viewport)</div>
+
+<p>Scroll down to see how sticky and fixed behave.</p>
+
+</body>
+</html>

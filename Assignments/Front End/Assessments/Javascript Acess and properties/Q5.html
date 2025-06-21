@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Prototype Extension Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  #output {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    white-space: pre-wrap;
+  }
+</style>
+</head>
+<body>
+
+<h1>Adding Properties to Prototype</h1>
+
+<button onclick="showPersonInfo()">Show Person Info</button>
+
+<div id="output"></div>
+
+<script>
+  // Constructor function
+  function Person(firstName, lastName) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  // Add method to prototype
+  Person.prototype.getFullName = function() {
+    return this.firstName + " " + this.lastName;
+  };
+
+  // Create instance
+  const person1 = new Person("Alice", "Smith");
+
+  // Add more properties and methods to prototype later
+  Person.prototype.age = 30;
+
+  Person.prototype.greet = function() {
+    return `Hello, my name is ${this.getFullName()} and I am ${this.age} years old.`;
+  };
+
+  // Function to display info
+  function showPersonInfo() {
+    const outputDiv = document.getElementById('output');
+    let text = "";
+    text += `Full Name: ${person1.getFullName()}\n`;
+    text += `Age: ${person1.age}\n`;
+    text += `${person1.greet()}\n`;
+    outputDiv.textContent = text;
+  }
+</script>
+
+</body>
+</html>

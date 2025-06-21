@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>CSS Animations & Pagination Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+  }
+
+  /* Animation: fade-in */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .animated-box {
+    width: 250px;
+    height: 150px;
+    background-color: #4CAF50;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4rem;
+    border-radius: 10px;
+
+    /* Animation properties */
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-iteration-count: 3;  /* runs 3 times */
+    animation-delay: 1s;
+    animation-fill-mode: forwards;
+  }
+
+  /* Pagination container */
+  .pagination {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Hoverable Pagination with spaces */
+  .pagination-spaced a {
+    margin: 0 8px;
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .pagination-spaced a:hover {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Pagination without spaces */
+  .pagination-nospace a {
+    padding: 10px 16px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-left: none;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .pagination-nospace a:first-child {
+    border-left: 1px solid #ccc;
+    border-radius: 5px 0 0 5px;
+  }
+  .pagination-nospace a:last-child {
+    border-radius: 0 5px 5px 0;
+  }
+  .pagination-nospace a:hover {
+    background-color: #2196F3;
+    color: white;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>CSS Animation & Pagination Demo</h1>
+
+<!-- Animated Box -->
+<div class="animated-box">
+  Animates 3 times with 1s delay
+</div>
+
+<!-- Pagination with spaces -->
+<h2>Pagination (Hoverable with spaces)</h2>
+<div class="pagination pagination-spaced">
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+</div>
+
+<!-- Pagination without spaces -->
+<h2>Pagination (Without spaces)</h2>
+<div class="pagination pagination-nospace">
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+</div>
+
+</body>
+</html>

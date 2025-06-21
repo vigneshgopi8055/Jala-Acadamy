@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Padding vs Margin Demo</title>
+<style>
+  /* Container with background to show padding */
+  .box {
+    background-color: lightblue;
+    width: 300px;
+    border: 2px solid navy;
+  }
+
+  /* Box with padding */
+  .padding-box {
+    padding: 30px; /* space *inside* the border */
+    margin-bottom: 40px;
+  }
+
+  /* Box with margin */
+  .margin-box {
+    margin: 30px; /* space *outside* the border */
+    padding: 20px;
+    background-color: lightcoral;
+    border: 2px solid darkred;
+  }
+</style>
+</head>
+<body>
+
+<h1>Padding vs Margin</h1>
+
+<div class="box padding-box">
+  <p>This box has <strong>padding: 30px</strong>. The space is <em>inside</em> the border, pushing the content away from the edges.</p>
+</div>
+
+<div class="box margin-box">
+  <p>This box has <strong>margin: 30px</strong>. The space is <em>outside</em> the border, pushing this box away from other elements.</p>
+</div>
+
+<p>Notice how padding increases the space inside the box’s border, while margin increases the space outside the box, separating it from other elements.</p>
+
+</body>
+</html>

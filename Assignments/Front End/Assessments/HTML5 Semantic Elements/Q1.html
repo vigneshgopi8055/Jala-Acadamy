@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Non-semantic Elements Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  .container {
+    border: 2px solid #4CAF50;
+    padding: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .content {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  .highlight {
+    color: #e91e63;
+    font-weight: bold;
+  }
+  .footer {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #555;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header">
+    Welcome to My Webpage
+  </div>
+
+  <div class="content">
+    This is a sample paragraph with some <span class="highlight">highlighted text</span> inside a 
+    <span>span element</span>. Notice how <span style="color: blue;">spans</span> let us style 
+    inline parts of the text without breaking the flow.
+  </div>
+
+  <div class="footer">
+    &copy; 2025 My Website. All rights reserved.
+  </div>
+
+</div>
+
+</body>
+</html>

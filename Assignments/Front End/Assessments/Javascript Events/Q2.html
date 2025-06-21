@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Form Validation Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    input[type="text"] {
+      padding: 8px;
+      width: 250px;
+      margin-right: 10px;
+    }
+    input[type="submit"] {
+      padding: 8px 16px;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>JavaScript Form Validation</h2>
+  <form id="myForm">
+    <label for="username">Enter your name:</label>
+    <input type="text" id="username" name="username" />
+    <input type="submit" value="Submit" />
+    <div class="error" id="errorMsg"></div>
+  </form>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(e) {
+      const input = document.getElementById("username").value.trim();
+      const error = document.getElementById("errorMsg");
+
+      if (input === "") {
+        e.preventDefault(); // Prevent form submission
+        error.textContent = "Text box cannot be empty!";
+      } else {
+        error.textContent = ""; // Clear error if valid
+        alert("Form submitted successfully!");
+      }
+    });
+  </script>
+
+</body>
+</html>

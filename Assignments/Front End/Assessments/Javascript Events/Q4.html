@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Access JSON Object</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+    #output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Access JSON Object using Dot Notation</h2>
+  <button onclick="showInfo()">Show Info</button>
+  <div id="output"></div>
+
+  <script>
+    // Create a JSON object
+    const person = {
+      name: "Alice",
+      age: 25,
+      city: "New York",
+      profession: "Developer"
+    };
+
+    // Access values using dot notation
+    function showInfo() {
+      const message = "Name: " + person.name +
+                      ", Age: " + person.age +
+                      ", City: " + person.city +
+                      ", Profession: " + person.profession;
+      document.getElementById("output").textContent = message;
+    }
+  </script>
+
+</body>
+</html>

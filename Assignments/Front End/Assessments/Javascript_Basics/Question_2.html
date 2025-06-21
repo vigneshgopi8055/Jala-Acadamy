@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sort Fruits Descending</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    ul {
+      list-style-type: square;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Fruit List</h2>
+  <ul id="fruitList"></ul>
+
+  <button id="sortBtn">Sort Descending</button>
+
+  <script>
+    const fruits = ['Banana', 'Apple', 'Mango', 'Orange', 'Grapes'];
+
+    // Function to display fruits in the list
+    function displayFruits(arr) {
+      const list = document.getElementById('fruitList');
+      list.innerHTML = ''; // Clear existing list
+      arr.forEach(fruit => {
+        const li = document.createElement('li');
+        li.textContent = fruit;
+        list.appendChild(li);
+      });
+    }
+
+    // Initially display unsorted fruits
+    displayFruits(fruits);
+
+    // Sort button event
+    document.getElementById('sortBtn').addEventListener('click', () => {
+      fruits.sort((a, b) => b.localeCompare(a)); // Descending sort
+      displayFruits(fruits);
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Input Restrictions Demo</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fafafa;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  label {
+    font-weight: bold;
+  }
+  input, textarea {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  input[disabled] {
+    background-color: #e0e0e0;
+  }
+  input:invalid {
+    border-color: red;
+  }
+</style>
+</head>
+<body>
+
+<h2>Input Restrictions Demo</h2>
+
+<form>
+  <!-- Disabled input -->
+  <div>
+    <label for="disabled-input">Disabled Input (cannot edit):</label>
+    <input type="text" id="disabled-input" name="disabled-input" value="Disabled field" disabled />
+  </div>
+
+  <!-- Max number -->
+  <div>
+    <label for="age">Age (min 18, max 60):</label>
+    <input type="number" id="age" name="age" min="18" max="60" required />
+  </div>
+
+  <!-- Maxlength -->
+  <div>
+    <label for="username">Username (max 10 chars):</label>
+    <input type="text" id="username" name="username" maxlength="10" required />
+  </div>
+
+  <!-- Readonly -->
+  <div>
+    <label for="readonly-field">Readonly Field:</label>
+    <input type="text" id="readonly-field" name="readonly-field" value="You can't change me" readonly />
+  </div>
+
+  <!-- Required -->
+  <div>
+    <label for="email">Email (required):</label>
+    <input type="email" id="email" name="email" required placeholder="example@mail.com" />
+  </div>
+
+  <!-- Size -->
+  <div>
+    <label for="code">Code (size 5):</label>
+    <input type="text" id="code" name="code" size="5" placeholder="Max 5 chars" maxlength="5" />
+  </div>
+
+  <!-- Value -->
+  <div>
+    <label for="preset">Preset Value:</label>
+    <input type="text" id="preset" name="preset" value="Preset Text" />
+  </div>
+
+  <input type="submit" value="Submit Form" />
+<

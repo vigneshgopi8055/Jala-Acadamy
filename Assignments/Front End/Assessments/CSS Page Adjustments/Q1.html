@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Table Border & Page Hover Color Change</title>
+  <style>
+    /* Black border on table */
+    table {
+      border: 2px solid black;
+      border-collapse: collapse;
+      width: 50%;
+      margin: 40px auto;
+      transition: background-color 0.3s ease;
+    }
+
+    /* Table cells border */
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* Change page background when hovering on table */
+    table:hover ~ body {
+      background-color: #f0f8ff; /* This won't work: 'body' is parent */
+    }
+  </style>
+</head>
+<body>
+
+  <table id="myTable">
+    <thead>
+      <tr><th>Name</th><th>Age</th><th>City</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Alice</td><td>25</td><td>New York</td></tr>
+      <tr><td>Bob</td><td>30</td><td>Chicago</td></tr>
+      <tr><td>Charlie</td><td>28</td><td>San Francisco</td></tr>
+    </tbody>
+  </table>
+
+  <script>
+    // Select table and body elements
+    const table = document.getElementById('myTable');
+    const body = document.body;
+
+    // Add event listeners to change background on hover
+    table.addEventListener('mouseenter', () => {
+      body.style.backgroundColor = '#f0f8ff'; // Light blue when hovering table
+    });
+
+    table.addEventListener('mouseleave', () => {
+      body.style.backgroundColor = ''; // Reset to default on mouse leave
+    });
+  </script>
+
+</body>
+</html>

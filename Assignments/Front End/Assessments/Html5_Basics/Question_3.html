@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Basics of HTML with Pseudo Selectors</title>
+  <style>
+    /* Pseudo-class: Hover effect on links */
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    /* Pseudo-class: First item in list */
+    ul li:first-child {
+      font-weight: bold;
+      color: green;
+    }
+
+    /* Pseudo-class: Focus on input */
+    input:focus {
+      border: 2px solid #4CAF50;
+      background-color: #f0fff0;
+    }
+
+    /* Pseudo-element: Add icon before heading */
+    h1::before {
+      content: "★ ";
+      color: gold;
+    }
+
+    /* Pseudo-element: Add line after h3 */
+    h3::after {
+      content: " — Section";
+      font-style: italic;
+      color: gray;
+    }
+
+    /* Pseudo-element: Style first letter of blockquote */
+    blockquote::first-letter {
+      font-size: 200%;
+      color: #3498db;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Link -->
+  <p><a href="#image-section">Go to Image Section ↓</a></p>
+
+  <!-- Heading Tags -->
+  <h1>Welcome to My Basics Page</h1>
+  <h2>Learning HTML Step by Step</h2>
+  <h3>Subsection: Elements Demo</h3>
+
+  <!-- Paragraph, Bold, Italic -->
+  <p>This is a <b>bold</b> and <i>italic</i> example in a paragraph to show how text styles can be applied.</p>
+
+  <!-- Anchor (Link) -->
+  <p>Visit <a href="https://www.example.com" target="_blank">Example.com</a> for more information.</p>
+
+  <!-- Unordered List -->
+  <h3>Things I'm Learning</h3>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ul>
+
+  <!-- Label and Input -->
+  <p>
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name">
+  </p>
+
+  <!-- Blockquote -->
+  <blockquote>
+    "Learning to code is like learning a new language — practice makes perfect." 
+    <br>– Anonymous
+  </blockquote>
+
+  <!-- Horizontal Rule -->
+  <hr>
+
+  <!-- Image Section with ID -->
+  <h3 id="image-section">Sample Image</h3>
+  <img src="https://via.placeholder.com/300x200" alt="Placeholder Image">
+
+  <!-- Division and Span -->
+  <div style="background-color: #f0f0f0; padding: 15px; margin-top: 20px;">
+    <p>This is a <span style="color: blue;">highlighted span</span> inside a div block.</p>
+  </div>
+
+</body>
+</html>

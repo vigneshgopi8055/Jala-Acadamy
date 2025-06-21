@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Simple Counter</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    text-align: center;
+  }
+  #countValue {
+    font-size: 2rem;
+    margin: 20px 0;
+  }
+  button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1>Counter</h1>
+
+<div id="countValue">0</div>
+<button onclick="incrementCount()">Count</button>
+
+<script>
+  let count = 0;
+
+  function incrementCount() {
+    count++;
+    document.getElementById('countValue').textContent = count;
+  }
+</script>
+
+</body>
+</html>
