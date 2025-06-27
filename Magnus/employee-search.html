@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Search Employee - JALA Academy</title>
+</head>
+<body style="margin:0; font-family:'Segoe UI', sans-serif; background-color:#e8edf3;">
+
+  <!-- Header -->
+  <div style="height:50px; background-color:#1d6fa5; color:white; display:flex; justify-content:space-between; align-items:center; padding:0 20px;">
+    <div style="font-weight:bold; font-size:18px;">Magnus</div>
+    <div><a href="index.html" style="color:white; text-decoration:none; background-color:#dc3545; padding:6px 10px; border-radius:4px; font-size:14px;">Logout</a></div>
+  </div>
+
+  <!-- Sidebar -->
+  <div style="position:fixed; top:50px; left:0; width:200px; height:calc(100% - 50px); background-color:#1a1f2b; color:white; padding-top:10px;">
+    <div style="text-align:center; margin-bottom:20px; font-size:14px; color:#eee;">
+      <div><strong>Guest User</strong></div>
+      <div>User</div>
+    </div>
+
+    <a href="dashboard.html" style="display:block; padding:10px 20px; color:white; text-decoration:none;">🏠 Home</a>
+
+    <div onclick="toggleSubmenu('employeeSubmenu')" style="padding:10px 20px; cursor:pointer;">👤 Employee</div>
+    <div id="employeeSubmenu" style="display:block; background-color:#2b2f3a;">
+      <a href="employee-create.html" style="display:block; padding:8px 30px; color:white; text-decoration:none;">Create</a>
+      <a href="employee-search.html" style="display:block; padding:8px 30px; color:white; text-decoration:none;">Search</a>
+    </div>
+
+    <div style="padding:10px 20px;">⚙️ Settings</div>
+  </div>
+
+  <!-- Main Content -->
+  <div style="margin-left:200px; padding:30px;">
+    <h2>Employee <span style="font-weight:normal;">Search</span></h2>
+    <hr style="border-top:3px solid #00bcd4; margin:10px 0;" />
+
+    <form id="searchForm" style="display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-bottom:20px;">
+      <input type="text" id="searchName" placeholder="Employee Name" style="padding:8px; font-size:14px;" />
+      <input type="text" id="searchMobile" placeholder="Mobile No" style="padding:8px; font-size:14px;" />
+      <button type="submit" style="padding:8px 16px; background-color:#28a745; color:white; border:none; border-radius:4px;">Search</button>
+      <button type="button" onclick="clearSearch()" style="padding:8px 16px; background-color:#dc3545; color:white; border:none; border-radius:4px;">Clear</button>
+      <a href="employee-create.html" style="padding:8px 16px; background-color:#007bff; color:white; text-decoration:none; border-radius:4px; margin-left:auto;">Add Employee</a>
+    </form>
+
+    <table style="width:100%; border-collapse:collapse; font-size:14px; background-color:white;">
+      <thead>
+        <tr style="background-color:#f4f4f4;">
+          <th style="padding:10px; border:1px solid #ccc;">First Name</th>
+          <th style="padding:10px; border:1px solid #ccc;">Last Name</th>
+          <th style="padding:10px; border:1px solid #ccc;">Mobile No</th>
+          <th style="padding:10px; border:1px solid #ccc;">Email</th>
+          <th style="padding:10px; border:1px solid #ccc;">Gender</th>
+          <th style="padding:10px; border:1px solid #ccc;">DOB</th>
+          <th style="padding:10px; border:1px solid #ccc;">Country</th>
+          <th style="padding:10px; border:1px solid #ccc;">City</th>
+          <th style="padding:10px; border:1px solid #ccc;">Action</th>
+        </tr>
+      </thead>
+      <tbody id="employeeData">
+        <!-- Rows dynamically loaded via JS -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    function toggleSubmenu(id) {
+      const submenu = document.getElementById(id);
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+
+    async function loadEmployees() {
+      const res = await fetch('/api/employees');
+      const data = await res.json();
+      const tbody = document.getElementById('employeeData');
+      tbody.innerHTML = '';
+
+      data.forEach(emp => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td style="padding:10px; border:1px solid #ccc;">${emp.firstName}</td>
+          <td style="padding:10px; border:1px solid #ccc;">${emp.lastName}</td>
+          <td style="padding:10px; border:1px solid #ccc;">${emp.mobile}</td>
+          <td style="padding:10px; border:1px solid #ccc;">${emp.email}</td>
+          <td style="padding:10px; border:1px solid #ccc;">${emp.gender}</td>
+          <td style="padding:10px; border:1px solid #ccc;">${emp.dob}</td>
+          <td style="padding:10px; border:1px solid #ccc;">${emp.country}</td>
+          <td style="padding:10px; border:1px solid #ccc;">${emp.city}</td>
+          <td style="padding:10px; border:1px solid #ccc;">
+            <button onclick="editEmployee('${emp._id}')" style="background-color:#28a745; color:white; border:none; padding:5px 10px; border-radius:3px;">Edit</button>
+            <button onclick="deleteEmployee('${emp._id}')" style="background-color:#dc3545; color:white; border:none; padding:5px 10px; border-radius:3px; margin-left:5px;">Delete</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    async function deleteEmployee(id) {
+      if (confirm("Are you sure you want to delete this employee?")) {
+        await fetch(`/api/employees/${id}`, { method: 'DELETE' });
+        loadEmployees();
+      }
+    }
+
+    function clearSearch() {
+      document.getElementById('searchName').value = '';
+      document.getElementById('searchMobile').value = '';
+      loadEmployees();
+    }
+
+    window.onload = loadEmployees;
+  </script>
+</body>
+</html>

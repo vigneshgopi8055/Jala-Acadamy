@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Employee - JALA Academy</title>
+</head>
+<body style="margin:0; font-family:'Segoe UI', sans-serif; background-color:#e8edf3;">
+
+  <!-- Header -->
+  <div style="height:50px; background-color:#1d6fa5; color:white; display:flex; justify-content:space-between; align-items:center; padding:0 20px;">
+    <div style="font-weight:bold; font-size:18px;">Magnus</div>
+    <div><a href="index.html" style="color:white; text-decoration:none; background-color:#dc3545; padding:6px 10px; border-radius:4px; font-size:14px;">Logout</a></div>
+  </div>
+
+  <!-- Sidebar -->
+  <div style="position:fixed; top:50px; left:0; width:200px; height:calc(100% - 50px); background-color:#1a1f2b; color:white; padding-top:10px;">
+    <div style="text-align:center; margin-bottom:20px; font-size:14px; color:#eee;">
+      <div><strong>Guest User</strong></div>
+      <div>User</div>
+    </div>
+
+    <a href="dashboard.html" style="display:block; padding:10px 20px; color:white; text-decoration:none;">🏠 Home</a>
+
+    <div onclick="toggleSubmenu('employeeSubmenu')" style="padding:10px 20px; cursor:pointer;">👤 Employee</div>
+    <div id="employeeSubmenu" style="display:block; background-color:#2b2f3a;">
+      <a href="employee-create.html" style="display:block; padding:8px 30px; color:white; text-decoration:none;">Create</a>
+      <a href="employee-search.html" style="display:block; padding:8px 30px; color:white; text-decoration:none;">Search</a>
+    </div>
+
+    <div style="padding:10px 20px;">⚙️ Settings</div>
+  </div>
+
+  <!-- Main Content -->
+  <div style="margin-left:200px; padding:30px;">
+    <h2>Employee <span style="font-weight:normal;">Create</span></h2>
+    <hr style="border-top:3px solid #00bcd4; margin:10px 0;" />
+
+    <form id="createEmployeeForm" action="/api/employees" method="POST" style="background-color:white; padding:20px; border:1px solid #ccc;">
+      <h3 style="margin-bottom:20px; color:#333;">Employee Details</h3>
+
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:15px;">
+        <input type="text" name="firstName" placeholder="First Name" required style="padding:8px; font-size:14px; width:300px;" />
+        <input type="text" name="lastName" placeholder="Last Name" required style="padding:8px; font-size:14px; width:300px;" />
+        <input type="email" name="email" placeholder="Email Id" required style="padding:8px; font-size:14px; width:300px;" />
+      </div>
+
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin-bottom:15px;">
+        <input type="text" name="mobile" placeholder="Mobile No" required style="padding:8px; font-size:14px; width:300px;" />
+        <input type="date" name="dob" required style="padding:8px; font-size:14px; width:300px;" />
+        <div style="font-size:14px;">
+          Gender:
+          <label><input type="radio" name="gender" value="Male" checked /> Male</label>
+          <label><input type="radio" name="gender" value="Female" /> Female</label>
+        </div>
+      </div>
+
+      <textarea name="address" placeholder="Address" style="width:100%; height:60px; padding:8px; font-size:14px;"></textarea>
+
+      <div style="display:flex; gap:20px; flex-wrap:wrap; margin:15px 0;">
+        <select name="country" required style="padding:8px; font-size:14px; width:200px;">
+          <option value="">--Select Country--</option>
+          <option value="India">India</option>
+        </select>
+
+        <select name="city" required style="padding:8px; font-size:14px; width:200px;">
+          <option value="">--Select City--</option>
+          <option value="Hyderabad">Hyderabad</option>
+          <option value="Pune">Pune</option>
+          <option value="Chennai">Chennai</option>
+        </select>
+
+        <label style="font-size:14px;"><input type="checkbox" name="otherCity" /> Other City</label>
+      </div>
+
+      <div style="font-size:14px; margin-bottom:20px;">
+        Skills:<br />
+        <label><input type="checkbox" name="skills" value="AWS" /> AWS</label>
+        <label><input type="checkbox" name="skills" value="QA-Automation" /> QA-Automation</label>
+        <label><input type="checkbox" name="skills" value="DevOps" /> DevOps</label>
+        <label><input type="checkbox" name="skills" value="Full Stack Developer" /> Full Stack Developer</label>
+        <label><input type="checkbox" name="skills" value="Middleware" /> Middleware</label>
+        <label><input type="checkbox" name="skills" value="WebServices" /> WebServices</label>
+      </div>
+
+      <div style="margin-top:20px;">
+        <button type="submit" style="padding:8px 16px; background-color:#28a745; color:white; border:none; border-radius:4px;">Save</button>
+        <button type="reset" style="padding:8px 16px; background-color:#dc3545; color:white; border:none; border-radius:4px;">Cancel</button>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function toggleSubmenu(id) {
+      const submenu = document.getElementById(id);
+      submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html>

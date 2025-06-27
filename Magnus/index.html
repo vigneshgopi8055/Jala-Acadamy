@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login - JALA Academy</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #dce1e7;
+    }
+
+    .banner {
+      background-color: yellow;
+      font-weight: bold;
+      color: black;
+      padding: 6px;
+      text-align: center;
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 80vh;
+      padding: 20px;
+    }
+
+    .login-box {
+      background-color: white;
+      padding: 30px 25px;
+      border-radius: 4px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 340px;
+      box-sizing: border-box;
+    }
+
+    .login-box h3 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-input {
+      width: 100%;
+      padding: 10px 12px 10px 38px;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      background-repeat: no-repeat;
+      background-position: 10px center;
+      background-size: 16px;
+    }
+
+    .email-input {
+      background-image: url('https://img.icons8.com/ios-filled/16/email.png');
+    }
+
+    .password-input {
+      background-image: url('https://img.icons8.com/ios-filled/16/lock.png');
+    }
+
+    .checkbox-container {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    .login-button,
+    .forgot-button {
+      width: 100%;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .login-button {
+      background-color: #1c6ca1;
+      margin-bottom: 10px;
+    }
+
+    .forgot-button {
+      background-color: #1b3764;
+    }
+
+    .or-separator {
+      text-align: center;
+      margin: 10px 0;
+      font-weight: bold;
+      color: #444;
+    }
+
+    .admin-link {
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    .admin-link a {
+      color: #1b3764;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .footer {
+      background-color: #4b9fcf;
+      color: white;
+      padding: 14px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Yellow Banner -->
+  <div class="banner">
+    Learn everything on Real-Time Scenarios. FREE for all.
+  </div>
+
+  <!-- Main Section -->
+  <div class="main-container">
+    <h1 style="color:#333; margin-bottom: 0;">JALA Academy</h1>
+    <p style="color:#444; margin: 4px;">Use the below details to login</p>
+    <p style="margin:2px; color:#000; font-size:14px;">Email: training@jalaacademy.com</p>
+    <p style="margin:2px; color:#000; font-size:14px;">Password: jobprogram</p>
+
+    <div class="login-box">
+      <h3>Sign in</h3>
+      <input type="text" class="login-input email-input" placeholder="Email or Mobile No" />
+      <input type="password" class="login-input password-input" placeholder="Password" />
+
+      <div class="checkbox-container">
+        <label><input type="checkbox" /> Remember Me</label>
+      </div>
+
+      <button class="login-button" onclick="window.location.href='dashboard.html'">Sign In</button>
+
+      <div class="or-separator">– OR –</div>
+
+      <button class="forgot-button" onclick="window.location.href='forgot-password.html'">Forgot Password</button>
+
+      <div class="admin-link">
+        <a href="admin-login.html">Admin Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    JALA Academy offers Job Guaranteed Programs for Freshers to 12 years’ experience on Full Stack Development / Automation Testing / Dev-Ops / QA / SDET/Cyber Security / RPA / Cloud Technologies. Training would be completely on live Project scenarios. Read our website JALA Academy for more details :
+    <a href="https://jalaacademy.com">https://jalaacademy.com</a>
+  </div>
+
+</body>
+</html>

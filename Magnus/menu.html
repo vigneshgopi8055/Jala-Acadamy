@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menu - Magnus</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e9eef5;
+    }
+
+    .top-bar {
+      background-color: #3498db;
+      padding: 12px 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #1e2b38;
+      color: white;
+      padding-top: 20px;
+    }
+
+    .sidebar div {
+      padding: 10px 20px;
+    }
+
+    .sidebar .sub-menu {
+      padding-left: 10px;
+      margin-top: 10px;
+    }
+
+    .sub-menu div {
+      padding: 6px 10px;
+      background-color: #2e3b4e;
+      border-left: 3px solid #00aced;
+    }
+
+    .container {
+      display: flex;
+      min-height: calc(100vh - 50px);
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 30px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      margin-bottom: 20px;
+    }
+
+    .tab-buttons button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .tab-buttons button.active {
+      background-color: #2980b9;
+    }
+
+    .menu-container {
+      display: flex;
+    }
+
+    .menu-column {
+      width: 200px;
+    }
+
+    .menu-item {
+      background-color: #3498db;
+      color: white;
+      padding: 10px;
+      border: 1px solid #2980b9;
+      text-align: center;
+      cursor: pointer;
+      margin-bottom: 2px;
+    }
+
+    .menu-item.disabled {
+      background-color: #8bb8d9;
+      cursor: not-allowed;
+    }
+
+    .submenu-column {
+      margin-left: 20px;
+    }
+
+    .message-box {
+      margin-left: 20px;
+      padding: 10px;
+      background: white;
+      border: 1px solid #ccc;
+      flex-grow: 1;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <div class="top-bar">
+    <div style="font-size: 20px; font-weight: bold;">Magnus</div>
+    <div>
+      <span style="margin-right: 20px;">👤 Guest User</span>
+      <span style="margin-right: 20px;">👨‍💼 User</span>
+      <a href="index.html" style="color: white; text-decoration: none;">Logout</a>
+    </div>
+  </div>
+
+  <!-- Sidebar and Content -->
+  <div class="container">
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+  <div><a href="dashboard.html" style="color: white; text-decoration: none;">🏠 Home</a></div>
+  <div><a href="employee-create.html" style="color: white; text-decoration: none;">👨‍💼 Employee</a></div>
+  <div>🔽 More</div>
+  <div class="sub-menu">
+    <div><a href="multiple-tabs.html" style="color: white; text-decoration: none;">📑 Multiple Tabs</a></div>
+    <div style="background-color: #4ba3d6;"><a href="menu.html" style="color: white; text-decoration: none;">📋 Menu</a></div>
+    <div><a href="autocomplete.html" style="color: white; text-decoration: none;">⚙️ Autocomplete</a></div>
+    <div><a href="collapsible.html" style="color: white; text-decoration: none;">📦 Collapsible</a></div>
+    <div><a href="images.html" style="color: white; text-decoration: none;">🖼️ Images</a></div>
+    <div><a href="slider.html" style="color: white; text-decoration: none;">🎞️ Slider</a></div>
+    <div><a href="tooltips.html" style="color: white; text-decoration: none;">💬 Tooltips</a></div>
+    <div><a href="popups.html" style="color: white; text-decoration: none;">📌 Popups</a></div>
+    <div><a href="links.html" style="color: white; text-decoration: none;">🔗 Links</a></div>
+    <div><a href="css-properties.html" style="color: white; text-decoration: none;">🎨 CSS</a></div>
+    <div><a href="iframes.html" style="color: white; text-decoration: none;">🌐 iFrames</a></div>
+  </div>
+</div>
+
+
+    <!-- Main Content -->
+    <div class="content">
+      <h2 style="margin-bottom: 20px;">Menu</h2>
+
+      <!-- Tabs -->
+      <div class="tab-buttons">
+        <button id="tab1Btn" class="active" onclick="switchTab('single')">Single Menus</button>
+        <button id="tab2Btn" onclick="switchTab('sub')">Sub Menus</button>
+      </div>
+
+      <!-- Tab Content -->
+      <div id="tab-single" class="menu-container">
+        <div class="menu-column">
+          <div class="menu-item" onclick="showMessage('Testing')">Testing</div>
+          <div class="menu-item" onclick="showMessage('Java')">Java</div>
+          <div class="menu-item" onclick="showMessage('.Net')">.Net</div>
+          <div class="menu-item" onclick="showMessage('Database')">Database</div>
+        </div>
+        <div class="message-box" id="singleMessage"></div>
+      </div>
+
+      <div id="tab-sub" class="menu-container" style="display:none;">
+        <div class="menu-column">
+          <div class="menu-item" onclick="loadSubMenu('Testing')">Testing</div>
+          <div class="menu-item" onclick="loadSubMenu('Java')">Java</div>
+          <div class="menu-item" onclick="loadSubMenu('.Net')">.Net</div>
+          <div class="menu-item" onclick="loadSubMenu('Database')">Database</div>
+        </div>
+        <div class="menu-column submenu-column" id="subMenuContainer"></div>
+        <div class="message-box" id="subMessage"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background-color: #e9eef5; text-align: center; padding: 15px; font-size: 14px;">
+    <strong>Copyright © 2025 <a href="#" style="text-decoration: none; color: #2980b9;">JALA Technologies</a>.</strong> All rights reserved.
+  </div>
+
+  <!-- Script -->
+  <script>
+    function switchTab(tab) {
+      document.getElementById('tab1Btn').classList.remove('active');
+      document.getElementById('tab2Btn').classList.remove('active');
+      document.getElementById('tab-single').style.display = 'none';
+      document.getElementById('tab-sub').style.display = 'none';
+
+      if (tab === 'single') {
+        document.getElementById('tab1Btn').classList.add('active');
+        document.getElementById('tab-single').style.display = 'flex';
+      } else {
+        document.getElementById('tab2Btn').classList.add('active');
+        document.getElementById('tab-sub').style.display = 'flex';
+      }
+
+      document.getElementById('singleMessage').innerHTML = '';
+      document.getElementById('subMessage').innerHTML = '';
+      document.getElementById('subMenuContainer').innerHTML = '';
+    }
+
+    function showMessage(option) {
+      document.getElementById('singleMessage').innerText = `You Have Selected ${option} Menu Option.`;
+    }
+
+    function loadSubMenu(menu) {
+      const subMenus = {
+        'Testing': ['Selenium', 'Manual Testing', 'DB Testing', 'Unit Testing'],
+        'Java': ['Adv Java', 'Core Java', 'Spring', 'Hibernate'],
+        '.Net': ['C#', 'ASP.NET', 'ADO.NET', 'MVC'],
+        'Database': ['SQL', 'My Sql', 'Oracle', 'H2']
+      };
+
+      let html = '';
+      subMenus[menu].forEach(option => {
+        html += `<div class="menu-item" onclick="showSubMessage('${option}')">${option}</div>`;
+      });
+
+      document.getElementById('subMenuContainer').innerHTML = html;
+      document.getElementById('subMessage').innerText = `You Have Selected ${menu} Menu Option.`;
+    }
+
+    function showSubMessage(option) {
+      document.getElementById('subMessage').innerText = `You Have Selected ${option} Menu Option.`;
+    }
+  </script>
+
+</body>
+</html>

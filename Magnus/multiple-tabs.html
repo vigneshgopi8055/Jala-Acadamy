@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabs - Magnus</title>
+  <meta charset="UTF-8" />
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; background-color: #e9eef5;">
+
+  <!-- Top Navigation Bar -->
+  <div style="background-color: #3498db; padding: 12px 20px; color: white; display: flex; justify-content: space-between;">
+    <div style="font-size: 20px; font-weight: bold;">Magnus</div>
+    <div>
+      <span style="margin-right: 20px;">👤 Guest User</span>
+      <span style="margin-right: 20px;">👨‍💼 User</span>
+      <a href="index.html" style="color: white; text-decoration: none;">Logout</a>
+    </div>
+  </div>
+
+  <!-- Sidebar and Main Content -->
+  <div style="display: flex; min-height: calc(100vh - 50px);">
+    
+    <!-- Sidebar -->
+    <div style="width: 200px; background-color: #1e2b38; color: white; padding-top: 20px;">
+      <div style="padding: 10px 20px;"><a href="dashboard.html" style="color: white; text-decoration: none;">🏠 Home</a></div>
+      <div style="padding: 10px 20px;"><a href="employee-create.html" style="color: white; text-decoration: none;">👨‍💼 Employee</a></div>
+      <div style="padding: 10px 20px;">🔽 More</div>
+      <div style="padding-left: 10px; margin-top: 10px;">
+        <div style="padding: 6px 10px; background-color: #2e3b4e; border-left: 3px solid #00aced;">
+          <a href="multiple-tabs.html" style="color: white; text-decoration: none;">📑 Multiple Tabs</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="menu.html" style="color: white; text-decoration: none;">📋 Menu</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="autocomplete.html" style="color: white; text-decoration: none;">⚙️ Autocomplete</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="collapsible.html" style="color: white; text-decoration: none;">📦 Collapsible</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="images.html" style="color: white; text-decoration: none;">🖼️ Images</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="slider.html" style="color: white; text-decoration: none;">🎞️ Slider</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="tooltips.html" style="color: white; text-decoration: none;">💬 Tooltips</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="popups.html" style="color: white; text-decoration: none;">📌 Popups</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="links.html" style="color: white; text-decoration: none;">🔗 Links</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="css-properties.html" style="color: white; text-decoration: none;">🎨 CSS</a>
+        </div>
+        <div style="padding: 6px 10px;">
+          <a href="iframes.html" style="color: white; text-decoration: none;">🌐 iFrames</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div style="flex-grow: 1; padding: 30px;">
+      <h2 style="margin-bottom: 20px;">Tabs</h2>
+
+      <!-- Tab Buttons -->
+      <div style="display: flex; margin-bottom: 20px;">
+        <button onclick="showTab('tab1')" id="btn-tab1" style="padding: 10px 20px; background-color: #2980b9; color: white; border: none; cursor: pointer;">Plan to Succeed</button>
+        <button onclick="showTab('tab2')" id="btn-tab2" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; cursor: pointer;">UnLearning</button>
+        <button onclick="showTab('tab3')" id="btn-tab3" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; cursor: pointer;">Ways of Unlearning</button>
+      </div>
+
+      <!-- Tab Contents -->
+      <div id="tab1" class="tab-content" style="background: white; padding: 20px; border: 1px solid #ccc;">
+        <p>Congratulations, You are in the best place to learn the technologies for JOB. Please strictly follow the plan for the first 45 days to see the unbelievable results.</p>
+        <p>You must UNLEARN to LEARN new things every day as technologies are changing faster than ever and Because the old rules will no longer apply...and so your old knowledge is. It's time for us to think beyond.</p>
+        <p>It’s not just learning technologies, Also You learn how to use your knowledge and experience to get a job in less than 100 days.</p>
+        <input type="text" style="width: 250px; margin: 5px; padding: 8px;" />
+        <input type="text" style="width: 250px; margin: 5px; padding: 8px;" />
+      </div>
+
+      <div id="tab2" class="tab-content" style="display:none; background: white; padding: 20px; border: 1px solid #ccc;">
+        <p>Unlearning is the process of realizing that something which we learned earlier is incorrect, ineffective, or obsolete, admitting it and deciding to erase such bad conditioning and misconceptions from our mind for good. It is the process of exploring what we have stored in our system and deleting all the unnecessary data.</p>
+        <p>It is the process of saying bye to an old, obsolete, and outdated paradigm and embracing a new paradigm and willingly undergoing a paradigm shift.</p>
+        <p>Unfortunately, we are controlled by myths which do not allow us to open our eyes to reality</p>
+        <input type="text" style="width: 250px; margin: 5px; padding: 8px;" />
+        <input type="text" style="width: 250px; margin: 5px; padding: 8px;" />
+      </div>
+
+      <div id="tab3" class="tab-content" style="display:none; background: white; padding: 20px; border: 1px solid #ccc;">
+        <p>The first step towards becoming an “unlearned” is not just to have a thirst for knowledge but to question our knowledge. Discussing our knowledge with those who are competent in a particular field, being challenged constantly, and being ready to be proved wrong will help us understand whether what we have learned is still relevant or obsolete.</p>
+        <p>It is also important to question one’s belief system and check whether we are treating myths as scientific facts.</p>
+        <p>The next important step is to take steps to develop creative and critical thinking.</p>
+        <input type="text" style="width: 250px; margin: 5px; padding: 8px;" />
+        <input type="text" style="width: 250px; margin: 5px; padding: 8px;" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div style="background-color: #e9eef5; text-align: center; padding: 15px; font-size: 14px;">
+    <strong>Copyright © 2025 <a href="#" style="text-decoration: none; color: #2980b9;">JALA Technologies</a>.</strong> All rights reserved.
+  </div>
+
+  <!-- Script for Tabs -->
+  <script>
+    function showTab(tabId) {
+      const tabs = ['tab1', 'tab2', 'tab3'];
+      tabs.forEach(t => {
+        document.getElementById(t).style.display = (t === tabId) ? 'block' : 'none';
+        document.getElementById('btn-' + t).style.backgroundColor = (t === tabId) ? '#2980b9' : '#3498db';
+      });
+    }
+  </script>
+
+</body>
+</html>

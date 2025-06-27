@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Slider - Magnus</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e9eef5;
+    }
+
+    .top-bar {
+      background-color: #3498db;
+      padding: 12px 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .container {
+      display: flex;
+      min-height: calc(100vh - 50px);
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #1e2b38;
+      color: white;
+      padding-top: 20px;
+    }
+
+    .sidebar div {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .sidebar .sub-menu {
+      padding-left: 10px;
+      margin-top: 10px;
+    }
+
+    .sub-menu div {
+      padding: 6px 10px;
+      background-color: #2e3b4e;
+      border-left: 3px solid #00aced;
+      cursor: pointer;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 30px;
+    }
+
+    .slider-tab {
+      background-color: white;
+      padding: 30px;
+      border: 1px solid #ccc;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    .slider-tab h3 {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      margin: -30px -30px 20px -30px;
+    }
+
+    .slider-value {
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    input[type=range] {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .footer {
+      background-color: #e9eef5;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="top-bar">
+    <div style="font-size: 20px; font-weight: bold;">Magnus</div>
+    <div>
+      <span style="margin-right: 20px;">👤 Guest User</span>
+      <span style="margin-right: 20px;">👨‍💼 User</span>
+      <a href="index.html" style="color: white; text-decoration: none;">Logout</a>
+    </div>
+  </div>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div onclick="window.location.href='dashboard.html'">🏠 Home</div>
+      <div onclick="window.location.href='employee-create.html'">👨‍💼 Employee</div>
+      <div>🔽 More</div>
+      <div class="sub-menu">
+        <div onclick="window.location.href='multiple-tabs.html'">📑 Multiple Tabs</div>
+        <div onclick="window.location.href='menu.html'">📋 Menu</div>
+        <div onclick="window.location.href='autocomplete.html'">⚙️ Autocomplete</div>
+        <div onclick="window.location.href='collapsible.html'">📦 Collapsible</div>
+        <div onclick="window.location.href='images.html'">🖼️ Images</div>
+        <div style="background-color:#4ba3d6;" onclick="window.location.href='slider.html'">🎞️ Slider</div>
+        <div onclick="window.location.href='tooltips.html'">💬 Tooltips</div>
+        <div onclick="window.location.href='popups.html'">📌 Popups</div>
+        <div onclick="window.location.href='links.html'">🔗 Links</div>
+        <div onclick="window.location.href='css-properties.html'">🎨 CSS</div>
+        <div onclick="window.location.href='iframes.html'">🌐 iFrames</div>
+      </div>
+    </div>
+
+    <!-- Main Area -->
+    <div class="content">
+      <h2>Slider</h2>
+
+      <div class="slider-tab">
+        <h3>Slider</h3>
+        <input type="range" min="0" max="100" value="12" id="slider" />
+        <div class="slider-value" id="sliderValue">Current Slider Value: 12</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <strong>Copyright © 2025 <a href="#" style="text-decoration: none; color: #2980b9;">JALA Technologies</a>.</strong> All rights reserved.
+  </div>
+
+  <!-- Script -->
+  <script>
+    const slider = document.getElementById('slider');
+    const sliderValue = document.getElementById('sliderValue');
+
+    slider.addEventListener('input', () => {
+      sliderValue.textContent = `Current Slider Value: ${slider.value}`;
+    });
+  </script>
+
+</body>
+</html>

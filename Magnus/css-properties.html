@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CSS Properties - Magnus</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #e9eef5;
+    }
+
+    .top-bar {
+      background-color: #3498db;
+      padding: 12px 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .container {
+      display: flex;
+      min-height: calc(100vh - 50px);
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #1e2b38;
+      color: white;
+      padding-top: 20px;
+    }
+
+    .sidebar div {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .sidebar .sub-menu {
+      padding-left: 10px;
+      margin-top: 10px;
+    }
+
+    .sub-menu div {
+      padding: 6px 10px;
+      background-color: #2e3b4e;
+      border-left: 3px solid #00aced;
+      cursor: pointer;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 30px;
+    }
+
+    .link-tab {
+      background-color: white;
+      padding: 30px;
+      border: 1px solid #ccc;
+      width: 90%;
+      max-width: 800px;
+    }
+
+    .link-tab h3 {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      margin: -30px -30px 20px -30px;
+    }
+
+    .tab-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .tab-buttons button {
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+
+    .tab-buttons button.active {
+      background-color: #2980b9;
+    }
+
+    .tab-content {
+      display: none;
+      text-align: center;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .labels span {
+      margin: 0 5px;
+      font-weight: bold;
+    }
+
+    .buttons button {
+      margin: 0 5px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 3px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .buttons .default { background-color: #bdc3c7; }
+    .buttons .primary { background-color: #3498db; }
+    .buttons .success { background-color: #2ecc71; }
+    .buttons .info { background-color: #1abc9c; }
+    .buttons .warning { background-color: #f39c12; }
+    .buttons .danger { background-color: #e74c3c; }
+
+    .alerts div {
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 5px;
+      color: white;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .alerts .success { background-color: #27ae60; }
+    .alerts .info { background-color: #00c0ef; }
+    .alerts .warning { background-color: #f39c12; }
+    .alerts .danger { background-color: #dd4b39; }
+
+    .progress-bar {
+      height: 25px;
+      margin: 15px 0;
+      background-color: #f5f5f5;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      line-height: 25px;
+      color: white;
+      text-align: right;
+      padding-right: 10px;
+      font-weight: bold;
+    }
+
+    .success-bar { width: 50%; background-color: #27ae60; }
+    .info-bar { width: 30%; background-color: #00c0ef; }
+    .warning-bar { width: 75%; background-color: #f39c12; }
+    .danger-bar { width: 90%; background-color: #dd4b39; }
+
+    .footer {
+      background-color: #e9eef5;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div style="font-size: 20px; font-weight: bold;">Magnus</div>
+    <div>
+      <span style="margin-right: 20px;">👤 Guest User</span>
+      <span style="margin-right: 20px;">👨‍💼 User</span>
+      <a href="index.html" style="color: white; text-decoration: none;">Logout</a>
+    </div>
+  </div>
+
+  <!-- Page Layout -->
+  <div class="container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div onclick="window.location.href='dashboard.html'">🏠 Home</div>
+      <div onclick="window.location.href='employee-create.html'">👨‍💼 Employee</div>
+      <div>🔽 More</div>
+      <div class="sub-menu">
+        <div onclick="window.location.href='multiple-tabs.html'">📑 Multiple Tabs</div>
+        <div onclick="window.location.href='menu.html'">📋 Menu</div>
+        <div onclick="window.location.href='autocomplete.html'">⚙️ Autocomplete</div>
+        <div onclick="window.location.href='collapsible.html'">📦 Collapsible</div>
+        <div onclick="window.location.href='images.html'">🖼️ Images</div>
+        <div onclick="window.location.href='slider.html'">🎞️ Slider</div>
+        <div onclick="window.location.href='tooltips.html'">💬 Tooltips</div>
+        <div onclick="window.location.href='popups.html'">📌 Popups</div>
+        <div onclick="window.location.href='links.html'">🔗 Links</div>
+        <div style="background-color:#4ba3d6;" onclick="window.location.href='css.html'">🎨 CSS</div>
+        <div onclick="window.location.href='iframes.html'">🌐 iFrames</div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+      <h2>Css Properties</h2>
+
+      <div class="link-tab">
+        <h3>Css Properties</h3>
+
+        <div class="tab-buttons">
+          <button onclick="showTab(0)" class="active">Links</button>
+          <button onclick="showTab(1)">Labels</button>
+          <button onclick="showTab(2)">Buttons</button>
+          <button onclick="showTab(3)">Alerts</button>
+          <button onclick="showTab(4)">Progress Bars</button>
+        </div>
+
+        <!-- Links Tab -->
+        <div class="tab-content active labels">
+          <a href="#" class="link1" style="color: red;">Link 1</a>
+          <a href="#" class="link2" style="color: blue;">Link 2</a>
+          <a href="#" class="link3" style="color: green;">Link 3</a>
+          <a href="#" class="link4" style="color: orange;">Link 4</a>
+          <a href="#" class="link5" style="color: purple;">Link 5</a>
+        </div>
+
+        <!-- Labels Tab -->
+        <div class="tab-content labels">
+          <span style="color: red;">Label 1</span>
+          <span style="color: blue;">Label 2</span>
+          <span style="color: green;">Label 3</span>
+          <span style="color: orange;">Label 4</span>
+          <span style="color: purple;">Label 5</span>
+        </div>
+
+        <!-- Buttons Tab -->
+        <div class="tab-content buttons">
+          <button class="default">Default</button>
+          <button class="primary">Primary</button>
+          <button class="success">Success</button>
+          <button class="info">Info</button>
+          <button class="warning">Warning</button>
+          <button class="danger">Danger</button>
+        </div>
+
+        <!-- Alerts Tab -->
+        <div class="tab-content alerts">
+          <div class="success">✔️ <strong>Success!</strong> Indicates a successful or positive action.</div>
+          <div class="info">ℹ️ <strong>Info!</strong> Indicates a neutral informative change or action.</div>
+          <div class="warning">⚠️ <strong>Warning!</strong> Indicates a warning that might need attention.</div>
+          <div class="danger">❌ <strong>Danger!</strong> Indicates a dangerous or potentially negative action.</div>
+        </div>
+
+        <!-- Progress Bars Tab -->
+        <div class="tab-content">
+          <div class="progress-bar">
+            <div class="progress-fill success-bar">50%</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill info-bar">30%</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill warning-bar">75%</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill danger-bar">90%</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <strong>Copyright © 2025 <a href="#" style="text-decoration: none; color: #2980b9;">JALA Technologies</a>.</strong> All rights reserved.
+  </div>
+
+  <!-- Tab Switching Script -->
+  <script>
+    function showTab(index) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tab-buttons button');
+
+      tabs.forEach((tab, i) => {
+        tab.classList.toggle('active', i === index);
+        buttons[i].classList.toggle('active', i === index);
+      });
+    }
+  </script>
+
+</body>
+</html>
